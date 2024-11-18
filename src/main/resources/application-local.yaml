@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/bookstore #change to 5432 if out of container
+    username: postgres
+    password: 1234567
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: none
+    properties:
+      hibernate.jdbc.lob.non_contextual_creation: true
+      #comment properties below when not in use
+      jakarta.persistence.schema-generation.create-source: metadata
+      jakarta.persistence.schema-generation.scripts.action: create
+      jakarta.persistence.schema-generation.scripts.create-target: create.sql
+      hibernate.hbm2ddl.delimiter: ;
