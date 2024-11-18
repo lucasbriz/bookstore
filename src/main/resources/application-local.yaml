@@ -5,7 +5,8 @@ spring:
     password: 1234567
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate.ddl-auto: none
+    hibernate.ddl-auto: create
+    show-sql: true #see all logs for executed queries
     properties:
       hibernate.jdbc.lob.non_contextual_creation: true
       #comment properties below when not in use
