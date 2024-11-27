@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -35,12 +36,12 @@ public class BookModel implements Serializable {
   private String title;
 
   @JsonProperty(access = Access.WRITE_ONLY)
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "publisher_id") //fk
   private PublisherModel publisher;
 
   @JsonProperty(access = Access.WRITE_ONLY)
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
       name = "tb_book_author",
       joinColumns = @JoinColumn(name = "book_id"),
