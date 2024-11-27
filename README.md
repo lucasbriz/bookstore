@@ -1,0 +1,11 @@
+## To run with Docker-Compose:
+- run `docker-compose up` command
+- run PG Admin on: http://localhost:5050
+- configure new server:
+    - name: postgres-local-docker
+    - connection:
+        - host name: pg-docker
+        - port: 5432
+        - maintenance: bookstore
+        - username: postgres
+        - password: 1234567
