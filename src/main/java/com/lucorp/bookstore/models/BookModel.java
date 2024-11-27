@@ -37,7 +37,7 @@ public class BookModel implements Serializable {
   @JsonProperty(access = Access.WRITE_ONLY)
   @ManyToOne
   @JoinColumn(name = "publisher_id") //fk
-  private PublisherModel publisherModel;
+  private PublisherModel publisher;
 
   @JsonProperty(access = Access.WRITE_ONLY)
   @ManyToMany
@@ -67,12 +67,12 @@ public class BookModel implements Serializable {
     this.title = title;
   }
 
-  public PublisherModel getPublisherModel() {
-    return publisherModel;
+  public PublisherModel getPublisher() {
+    return publisher;
   }
 
-  public void setPublisherModel(PublisherModel publisherModel) {
-    this.publisherModel = publisherModel;
+  public void setPublisher(PublisherModel publisher) {
+    this.publisher = publisher;
   }
 
   public Set<AuthorModel> getAuthors() {
